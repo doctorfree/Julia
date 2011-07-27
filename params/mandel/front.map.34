@@ -1,0 +1,4 @@
+:
+# This is Map 34 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+mandel -a -0.74758 -A -0.74624 -b 0.10671 -B 0.10779 -K 512 $*

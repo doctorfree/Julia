@@ -1,0 +1,4 @@
+:
+# This is Map 25 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+mandel -a -0.95 -A -0.88333 -b 0.23333 -B 0.3 $*

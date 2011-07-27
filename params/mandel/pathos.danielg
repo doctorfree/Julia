@@ -1,0 +1,49 @@
+:
+# Path: hobbes!uunet!autodesk!m31!danielg
+# From: danielg@autodesk.com
+# Newsgroups: sci.fractals
+# Subject: Re: Periodicity checking on m
+# Message-ID: <18782@autodesk.COM>
+# Date: 24 Mar 93 01:55:28 GMT
+# References: <C3vKD7.1v4@world.std.com>
+# Sender: news@Autodesk.COM
+# Reply-To: danielg@autodesk.com
+# Organization: Autodesk, Inc.
+# Lines: 33
+# 
+# In article 1v4@world.std.com, mrob@world.std.com (Robert P Munafo) writes:
+# > > ...  The boundary tracing method will only
+# > > calculate the pixels on the boundary of the lake/lakelets, and the
+# > > boundary is the absolute worst place for picking up periodicity ...
+# [...]
+# > The bottom line is that period-checking will always improve your program's
+# > speed if the iteration limit is sufficiently high.
+# 
+# That depends on which part of the complex plane you are trying to image.
+# The region centered at:
+# 	C = (-.228757644604481030770, -.640230266918152768341)
+# With a span of 3.57e-06 units is a *very* pathologic region.
+# I've not tried period-checking on this region, but I doubt very
+# much if it (or any other tricks) can help much at all.  By the
+# way, you will need an iteration limit of around 100,000 to get
+# a reasonable image which I think you would classify as "sufficiently
+# high".
+# 
+# Have fun!
+# 
+# 
+# ---
+# Daniel Green              ___________          ___________
+# danielg@autodesk.com      |         |          |         |
+#                           |  _________         | _________
+#                           |  |       |         | |       |
+#                           |  |  _______        | | _______
+#                           |  |  |     |        | | |     |
+#                           ---|  |  _____       --| | _____
+#                              ---|  | D |         --| | D |
+#                                 ---|  G|           --|  G|
+# wall-eyed stereo -->               -----             -----
+# 
+# 
+# 
+mandel -T -K 10000 -x -.228757644604481030770 -y -.640230266918152768341 -w 0.00000357 -h 0.00000357 $*

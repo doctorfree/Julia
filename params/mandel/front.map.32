@@ -1,0 +1,4 @@
+:
+# This is Map 32 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+mandel -a -0.75104 -A -0.7408 -b 0.10511 -B 0.11536 $*

@@ -1,0 +1,4 @@
+:
+# This is Map 36 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+mandel -a -0.74591 -A -0.74448 -b 0.11196 -B 0.11339 $*

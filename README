@@ -1,0 +1,33 @@
+
+
+INTRO
+-----
+
+Calculate and graphically display Julia and Mandelbrot sets.
+Written by Ronald Joe Record (rr@ronrecord.com) 18 Mar 1993
+
+BUILD
+-----
+
+To build the julia and mandel binaries, either use the Imakefile or the 
+sample makefile - Makefile.std. To build with the Imakefile, first type
+"xmkmf" or "imake -DUseInstalled -I/usr/lib/X11/config" if your system 
+doesn't have xmkmf. Then just type "make" and the julia binary will be
+built. To create the mandel binary, type "ln julia mandel" as it is just
+a link. 
+
+The manual pages can be formatted by typing "nroff -man julia.man > julia.doc" 
+and "nroff -man mandel.man > mandel.doc".
+
+INSTALL
+-------
+
+To install julia, copy the julia binary to the desired location (the sample
+makefiles put it in /usr/local/bin)
+Copy the formatted man page to wherever you keep your local doc (i use
+/usr/man/cat.LOCAL for imaging software), then add that location
+to your MANPATH.
+
+Ideas, comments, additions, deletions, suggestions, bug reports, code review,...
+e-mail Ronald Record at rr@ronrecord.com
+

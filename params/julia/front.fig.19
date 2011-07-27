@@ -1,0 +1,4 @@
+:
+# This is figure 19 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+julia -p 0.27334 -q 0.00742 -a -1.3 -b -1.3 $*

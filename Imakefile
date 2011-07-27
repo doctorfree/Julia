@@ -1,0 +1,31 @@
+#
+#        Imakefile for julia, by Ron Record
+#
+        DEPLIBS = $(DEPXLIB)
+#    Uncomment the following line if your system doesn't support prototypes 
+#    PROTODEFINE = -D_NO_PROTO
+        DEFINES = $(PROTODEFINE)
+       INCLUDES = -I. -I../libXrr
+         CFLAGS = -O $(INCLUDES) $(DEFINES) $(CDEBUGFLAGS)
+LOCAL_LIBRARIES = ../libXrr/libXrr.a $(XLIB) 
+  SYS_LIBRARIES = -lm
+#		 BINDIR = /usr/local/bin
+#         MANDIR = /usr/local/man/man1
+  JULI_INST_DIR = $(DESTDIR)/usr/local/mathrec/julia
+  MAND_INST_DIR = $(DESTDIR)/usr/local/mathrec/mandel
+      MANSUFFIX = 1
+           SRCS = julia.c init.c
+           OBJS = julia.o init.o
+
+ComplexProgramTarget(julia)
+
+install:: install.man
+	@if [ ! -d $(JULI_INST_DIR) ]; then mkdir -p $(JULI_INST_DIR); fi
+	@cd ./params/julia; set -x; for file in *; do \
+		$(INSTALL) -c $(INSTBINFLAGS) $$file $(JULI_INST_DIR); \
+	done
+	@if [ ! -d $(MAND_INST_DIR) ]; then mkdir -p $(MAND_INST_DIR); fi
+	@cd ./params/mandel; set -x; for file in *; do \
+		$(INSTALL) -c $(INSTBINFLAGS) $$file $(MAND_INST_DIR); \
+	done
+	@cd $(DESTDIR)/$(BINDIR); ln julia mandel

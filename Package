@@ -1,0 +1,10 @@
+echo "Making tags files"
+make tags
+echo "Backing up previous shar file, if any"
+[ -f julia.shar ] && mv julia.shar julia.shar-
+echo "Creating new man pages if necessary"
+[ -f julia.LOCAL ] || nroff -man julia.man > julia.LOCAL
+[ -f mandel.LOCAL ] || nroff -man mandel.man > mandel.LOCAL
+echo "Creating new shar file"
+shar COPYING README Imakefile Makefile.std Package *.c *.h julia.LOCAL mandel.LOCAL julia.man mandel.man tags TAGS params/*/* > julia.shar
+echo "Done"

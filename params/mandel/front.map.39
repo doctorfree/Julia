@@ -1,0 +1,4 @@
+:
+# This is Map 39 from the book "Frontiers of Chaos" by Peitgen and Richter.
+
+mandel -a -0.745468 -A -0.745385 -b 0.112979 -B 0.113039 -K 512 $*

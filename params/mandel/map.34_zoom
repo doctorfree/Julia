@@ -1,0 +1,5 @@
+:
+# This is a zoom of Map 34 from the book "Frontiers of Chaos" by 
+# Peitgen and Richter.
+
+mandel -a -0.747219 -A -0.747205 -b 0.106303 -B 0.106314 -K 2048 $*

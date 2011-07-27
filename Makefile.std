@@ -1,0 +1,42 @@
+CC = cc 
+#DEBUG =  -g
+##
+## Compiler Defines
+## 
+DEFINES = -DMAPS
+
+CFLAGS = $(DEBUG) $(DEFINES)
+##
+## Libraries
+## X11 	X11 graphics library
+##
+##
+LIBS 	= -lX11 -lm
+
+.o:.c
+
+all: julia julia.LOCAL
+
+cp install:	all
+	-mkdir -p $(ROOT)/usr/local/bin
+	cp julia $(ROOT)/usr/local/bin/julia
+	-mkdir -p $(ROOT)/usr/man/cat.LOCAL
+	cp julia.LOCAL $(ROOT)/usr/man/cat.LOCAL
+	-mkdir -p $(ROOT)/usr/local/lib/julia
+	cp params/* $(ROOT)/usr/local/lib/julia
+	-mkdir -p $(ROOT)/usr/local/lib/julia/pics
+	cp pics/* $(ROOT)/usr/local/lib/julia/pics
+
+clean:
+	rm -f *.o
+
+clobber:	clean
+	rm -f julia
+
+julia : julia.o hls2rgb.o
+	$(CC) $(CFLAGS) -o $@ $@.o hls2rgb.o $(LIBS)
+
+julia.o: julia.c hls2rgb.c julia.h
+
+julia.LOCAL:	julia.man
+	nroff -man julia.man > julia.LOCAL

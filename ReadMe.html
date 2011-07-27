@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>julia/mandel</TITLE>
+</HEAD>
+<BODY>
+<H1>julia/mandel</H1>
+<P>
+Calculate and graphically display Julia and Mandelbrot sets
+<DL>
+<DT><B>Authored and Contributed by</B>
+<DD>Ronald Joe Record
+<DT><B>Restrictions</B>
+<DD>Copyright 1993, 1994 Ronald Joe Record
+
+<DT><B>Description</B>
+<DD>
+Julia and mandel are X11 clients.
+Julia can be used to display the popular Julia sets. These sets are
+calculated by iterating the map z -> z^2 + c where z and c are
+Complex numbers, c a specified parameter and z the initial condition.
+<P>
+Mandel calculates and displays the Mandelbrot set. This is done by
+iterating the same map, z -> z^2 + c, but here the initial condition
+is held fixed at the origin and c is varied over a specified subset
+of the Complex plane.
+<DT><B>Build</B>
+<DD>
+To build the julia and mandel binaries, either use the Imakefile or the 
+sample makefile - Makefile.std. To build with the Imakefile, first type
+"xmkmf" or "imake -DUseInstalled -I/usr/lib/X11/config" if your system 
+doesn't have xmkmf. Then just type "make" and the julia binary will be
+built. To create the mandel binary, type "ln julia mandel" as it is just
+a link. 
+<P>
+The manual pages can be formatted by typing "nroff -man julia.man > julia.doc" 
+and "nroff -man mandel.man > mandel.doc".
+
+<DT><B>Install</B>
+<DD>
+To install julia, copy the julia binary to the desired location (the sample
+makefiles put it in /usr/local/bin)
+Copy the formatted man page to wherever you keep your local doc (i use
+/usr/man/cat.LOCAL for imaging software), then add that location
+to your MANPATH.
+
+<DT><B>Productivity</B>
+<DD>These programs and others like them are probably responsible for more
+CPU cycles than any other single application.
+
+<DT><B>Safety</B>
+<DD>I have used these for years without harm.
+
+<DT><B>Work Planned</B>
+<DD>None
+
+<DT><B>Documentation</B>
+<DD>manual pages.
+
+<DT><B>Verification</B>
+<DD>Execute any or all of the shell scripts provided in /usr/local/mathrec/julia
+and /usr/local/mathrec/mandel.
+
+<DT><B>Feedback</B>
+<DD>
+Ideas, comments, additions, deletions, suggestions, bug reports, code review,...
+e-mail Ronald Record at rr@ronrecord.com 
+
+</DL>
+</BODY>
+</HTML>
